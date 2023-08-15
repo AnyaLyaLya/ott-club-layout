@@ -1,0 +1,179 @@
+.TV-channels {
+  padding: 80px 0 84px;
+
+  &__title {
+    margin-bottom: 20px;
+    opacity: 0.9;
+
+    &::after {
+      content: url('/public/images/channels/lightning.svg');
+      position: relative;
+      top: -30px;
+      right: -10px; 
+    }
+
+    @include font(52px, 140%);
+
+    @include onLaptop {
+      font-size: 36px;
+    }
+
+    @include onTablet {
+      font-size: 30px;
+      margin-bottom: 16px;
+    }
+
+    @include onMobile {
+      font-size: 28px;
+      margin-bottom: 12px;
+      text-align: center;
+    }
+
+    @include onMobileXS {
+      font-size: 24px;
+      margin-bottom: 8px;
+    }
+  }
+
+  &__subtitle {
+    margin-bottom: 50px;
+    opacity: 0.7;
+
+    @include font(20px, 150%, 400);
+
+    @include onLaptop {
+      margin-bottom: 32px;
+      font-size: 16px;
+    }
+
+    @include onTablet {
+      margin-bottom: 32px;
+    }
+
+    @include onMobile {
+      text-align: center;
+    }
+
+    @include onMobileXS {
+      font-size: 14px;
+      margin-bottom: 24px;
+    }
+  }
+
+  &__categories {
+    display: flex;
+    list-style: none;
+    overflow: overlay;
+    margin-bottom: 50px;
+
+    @include font(20px, 150%, 400);
+
+    &--item {
+      border-radius: 5px;
+      border: 2px solid rgba(255, 255, 255, 0.80);
+      transition: all 0.3s ease-in-out;
+
+      margin-right: 24px;
+      padding: 16px 24px;
+
+      &--checked,
+      &:hover {
+        border-color: #FC3232;
+        background: #FC3232;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      @include onLaptop {
+        padding: 12px 18px;
+      }
+
+      @include onMobile {
+        padding: 8px 16px;
+      }
+    }
+
+    @include onLaptop {
+      font-size: 16px;
+      margin-bottom: 40px;
+    }
+
+    @include onMobile {
+      margin-bottom: 14px;
+    }
+  }
+
+  &__gallery {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 50px 70px;
+    margin-bottom: 24px; 
+
+    &--img {
+      width: 100%;
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+        scale: 1.2;
+      }
+    }
+
+    @include onLaptop {
+      gap: 32px 24px;
+      margin-bottom: 26px;
+    }
+
+    @include onTablet {
+      grid-template-columns: repeat(4, 1fr);
+      margin-bottom: 30px;
+    }
+
+    @include onMobile {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-bottom: 26px;
+    }
+  }
+
+  &__button {
+    border: none;
+    background: transparent;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    margin-left: auto;
+
+    @include font(18px, 140%);
+
+    @include onLaptop {
+      font-size: 14px;
+    }
+  }
+
+  @include onLaptop {
+    padding: 66px 0 26px;
+  }
+
+  @include onTablet {
+    padding: 66px 0 26px;
+  }
+
+  @include onMobile {
+    padding: 74px 0 52px;
+  }
+}
+
+.tablet {
+  @include onTablet {
+    display: none;
+  }
+}
+
+.mobile {
+  @include onMobile {
+    display: none;
+  }
+}

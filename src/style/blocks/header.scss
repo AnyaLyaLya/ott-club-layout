@@ -1,0 +1,97 @@
+.header {
+  background-image: url('/public/images/background/bats.png');
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  background-size: 100%;
+
+  @include onMobile {
+    background-position: center right;
+    background-size: 200%;
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 0 40px 0;
+
+    @include onLaptop {
+      padding: 24px 0;
+    }
+
+    @include onMobile {
+      padding: 44px 0 8px;
+    }
+  }
+
+  &__logo {
+    @include size (96px, 86px);
+
+    @include onLaptop {
+      @include size (72px, 64px);
+    }
+
+    @include onTablet {
+      @include size (64px, 56px);
+    }
+
+    @include onMobile {
+      @include size (56px, 50px);
+    }
+  }
+
+  &__social {
+    margin-right: 16px;
+
+    &--icon {
+      @include size (24px, 24px);
+
+      margin-right: 16px;
+
+      @include onLaptop {
+        margin-right: 24px;
+      }
+    }
+
+    @include onLaptop {
+      margin-right: 24px;
+    }
+
+    @include onMobile {
+      display: none;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+
+    &--link {
+      padding: 16px 32px;
+      border-radius: 5px;
+      border: 2px solid transparent;
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+        border-color: $white;
+      }
+
+      @include font(20px, 140%, 600);
+
+      &--mobile{
+        @include onMobile {
+          display: none;
+        }
+      }
+
+      @include onLaptop {
+        font-size: 16px;
+        padding: 12px 24px;
+      }
+
+      @include onTablet {
+        padding: 10px 24px;
+      }
+    }
+  }
+}

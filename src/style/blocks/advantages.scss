@@ -1,0 +1,78 @@
+.advantages {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  padding: 60px 0 80px 0;
+  
+  &__item {
+    display: flex;
+    flex-direction: column;
+
+    @include onTablet {
+      align-items: center;
+    }
+  }
+
+  &__img {
+    opacity: 0.9;
+    margin-bottom: 32px;
+
+    @include size (96px, 96px);
+
+    @include onLaptop {
+      margin-bottom: 20px;
+      
+      @include size (64px, 64px);
+    }
+
+    @include onTablet {
+      margin-bottom: 12px;
+    }
+  }
+
+  &__title {
+    opacity: 0.9;
+    margin-bottom: 16px;
+
+    @include font(24px, 100%, 600);
+
+    @include onLaptop {
+      font-size: 16px;
+      line-height: 112%;
+    }
+
+    @include onTablet {
+      text-align: center;
+      margin-bottom: 0;
+    }
+  }
+
+  &__subtitle {
+    opacity: 0.8;
+
+    @include font(20px, 150%, 400);
+
+    @include onLaptop {
+      font-size: 16px;
+      line-height: 112%;
+    }
+
+    @include onTablet {
+      display: none;
+    }
+  }
+
+  @include onLaptop {
+    padding: 32px;
+    gap: 24px;
+  }
+
+  @include onTablet {
+    gap: 60px;
+    padding: 24px 0 40px 0;
+  }
+
+  @include onMobile {
+    display: none;
+  }
+}

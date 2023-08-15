@@ -1,0 +1,140 @@
+.accordion {
+  padding: 60px 0 100px 0;
+  border-bottom: 1px solid #ffffff35;
+
+  &__title {
+    margin-bottom: 65px;
+
+    @include font (52px, 140%);
+
+    @include onLaptop {
+      font-size: 36px;
+      margin-bottom: 40px;
+    }
+
+    @include onTablet {
+      font-size: 30px;
+      margin-bottom: 24px;
+    }
+
+    @include onMobile {
+      margin-bottom: 32px;
+    }
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 212px;
+    row-gap: 32px;
+
+    @include onLaptop {
+      column-gap: 32px;
+      row-gap: 24px;
+    }
+
+    @include onTablet {
+      column-gap: 24px;
+      row-gap: 20px;
+    }
+
+    @include onMobile {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__tabs {
+    overflow: hidden;
+  }
+
+  &__tab {
+    width: 100%;
+    color: white;
+    overflow: hidden;
+    border-bottom: 1px solid #ffffff35;
+    margin-bottom: 20px;
+
+    &--label {
+      display: flex;
+      justify-content: space-between;
+      padding-bottom: 40px;
+
+      @include font (24px, 140%);
+      cursor: pointer;
+
+      &::after {
+        content: "\276F";
+        margin-left: 60px;
+        width: 1em;
+        height: 1em;
+        text-align: center;
+        transition: all 0.5s ease-in-out;
+
+        @include onMobile {
+          margin-left: 50px;
+        }
+      }
+
+      @include onLaptop {
+        font-size: 18px;
+      }
+
+      @include onTablet {
+        font-size: 16px;
+      }
+
+      @include onMobile {
+        padding-bottom: 20px;
+      }
+    }
+
+    &--content {
+      max-height: 0;
+      opacity: 0.8;
+      transition: all 0.5s ease-in-out;
+
+      @include font (20px, 140%, 400);
+
+      @include onLaptop {
+        font-size: 16px;
+      }
+    }
+
+    @include onMobile {
+      margin-bottom: 20px;
+    }
+
+    &:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+    }
+  }
+
+  &__checkbox {
+    display: none;
+
+    &:checked {
+      + .accordion__tab--label {
+        &::after {
+          transform: rotate(90deg);
+        }
+      }
+      ~ .accordion__tab--content {
+        max-height: 100vh;
+        padding-bottom: 32px;
+      }
+    }
+  }
+
+  @include onLaptop {
+    padding: 58px 0 48px 0;
+  }
+
+  @include onTablet {
+    padding: 40px 0;
+  }
+
+  @include onMobile {
+    padding: 32px 0 86px;
+  }
+}

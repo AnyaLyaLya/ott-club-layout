@@ -1,0 +1,81 @@
+.page {
+  font-family: Inter, sans-serif;
+  scroll-behavior: smooth;
+
+  &__body {
+    margin: 0;
+  }
+
+  &__container {
+    margin: 0 auto;
+    max-width: 1400px;
+
+    @include onLaptop {
+      max-width: 900px;
+    }
+
+    @include onTablet {
+      max-width: 700px;
+    }
+
+    @include onMobile {
+      max-width: 336px;
+    }
+
+    @include onMobileXS {
+      max-width: 290px;
+    }
+  }
+
+  &__bunner--1 {
+    background-image: url('/public/images/background/bunner.png');
+    background-repeat: no-repeat;
+    background-position: 90% 20%;
+    background-size: 815px;
+
+    @include onLaptop {
+      background-size: 620px;
+      background-position: 135% 20%;
+    }
+
+    @include onTablet {
+      background-size: 520px;
+      background-position: 175% 20%;
+    }
+
+    @include onMobile {
+      background-size: 300px;
+      background-position: center 35%;
+    }
+
+    @include onMobileXS {
+      background-size: 280px;
+    }
+  }
+
+  &__bunner--2 {
+    background-image: url('/public/images/background/bunner2.png');
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: 785px;
+
+    @include onLaptop {
+      background-size: 590px;
+      background-position: 130% center;
+    }
+
+    @include onTablet {
+      background-size: 470px;
+      background-position: 150% center;
+    }
+
+    @include onMobile {
+      background-size: 350px;
+      background-position: center 35%;
+    }
+
+    @include onMobileXS {
+      background-size: 280px;
+    }
+  }
+}

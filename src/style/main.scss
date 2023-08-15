@@ -1,0 +1,57 @@
+@import "./utils/__vars";
+@import "./utils/__mixins";
+
+@import "./blocks/page.scss";
+@import "./blocks/header.scss";
+@import "./blocks/footer.scss";
+@import "./blocks/link.scss";
+@import "./blocks/bunner.scss";
+@import "./blocks/button.scss";
+@import "./blocks/advantages.scss";
+@import "./blocks/pricing.scss";
+@import "./blocks/TV-channels.scss";
+@import "./blocks/accordion.scss";
+
+h1,
+h2,
+h3,
+h4,
+h6,
+ul,
+a,
+li,
+p,
+button {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #131212;
+  box-sizing: border-box;
+
+  background-image: url('/public/images/background/gr1.png'),
+  url('/public/images/background/gr2.png'),
+  url('/public/images/background/footer.png'),
+  url('/public/images/background/gr3.png');
+  background-size: contain, contain, 120% , contain;
+  background-repeat: no-repeat;
+  background-position: top, center 80%, bottom, bottom;
+
+  @include onMobile {
+    background-size: 150%, contain, 150% , contain;
+    background-position: top, center 80%, bottom, bottom;
+  }
+}
+
+main {
+  background-image: url('/public/images/background/web.png');
+  background-size: 630px;
+  background-repeat: no-repeat;
+  background-position: left 80%;
+}
+
+::-webkit-scrollbar {
+  background: transparent; 
+}
+

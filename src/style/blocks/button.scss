@@ -1,0 +1,29 @@
+.button {
+  padding: 24px 40px;
+  border-radius: 5px;
+  border: 2px solid transparent;
+  background: $accent-red;
+  transition: all 0.3s ease-in-out;
+
+  @include font(26px, 140%, 600);
+
+  &:hover {
+    background-color: transparent;
+    border-color: $accent-red;
+  }
+
+  @include onLaptop {
+    padding: 16px 28px;
+    font-size: 18px;
+  }
+
+  @include onTablet {
+    padding: 16px 24px;
+    font-size: 16px;
+  }
+
+  @include onMobileXS {
+    padding: 14;
+    font-size: 14px;
+  }
+}
